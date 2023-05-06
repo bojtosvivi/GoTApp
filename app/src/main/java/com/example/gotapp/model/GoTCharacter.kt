@@ -6,12 +6,12 @@ import androidx.room.TypeConverters
 import com.example.gotapp.persistence.Converters
 import kotlinx.serialization.*
 
-typealias Characters = List<Character>
+typealias GoTCharacters = List<GoTCharacter>
 
 @Serializable
-@Entity
+@Entity(tableName = "character")
 @TypeConverters(Converters::class)
-data class Character (
+data class GoTCharacter (
     @PrimaryKey val name: String,
     val slug: String,
     val house: House? = null,
