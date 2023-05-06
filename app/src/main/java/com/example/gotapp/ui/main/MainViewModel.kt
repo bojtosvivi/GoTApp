@@ -4,29 +4,39 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.gotapp.model.GoTCharacter
 import com.example.gotapp.model.GoTCharacters
+import com.example.gotapp.model.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    mainRepository: MainRepository
+    val mainRepository: MainRepository
 ) : ViewModel() {
+    fun reloadCharacters() {
+        viewModelScope.launch(Dispatchers.IO) {
+            mainRepository.reloadCharacters(uiState)
+        }
+    }
 
-    val characterList: Flow<GoTCharacters> =
-        mainRepository.getCharacters(
-            onStart = { _isLoading.value = true },
-            onCompletion = { _isLoading.value = false },
-            onError = { _error.value = it }
-        )
+    fun deleteCharacter(it: GoTCharacter) {
+        viewModelScope.launch(Dispatchers.IO) {
+            mainRepository.deleteCharacter(it)
+        }
+    }
 
+    val characterList: Flow<GoTCharacters> = mainRepository.getCharacters()
 
+    val uiState: MutableStateFlow<UIState> = MutableStateFlow(UIState.Loading)
 
-    private val _isLoading: MutableState<Boolean> = mutableStateOf(false)
-    private val _error: MutableState<String?> = mutableStateOf(null)
-
-    val isLoading: State<Boolean> get() = _isLoading
-    val error: State<String?> get() = _error
+    init {
+        reloadCharacters()
+    }
 
 }

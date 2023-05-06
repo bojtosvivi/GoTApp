@@ -1,0 +1,66 @@
+swagger: "2.0"
+info:
+  description: "Game of Thrones API specification"
+  version: "1.0.0"
+  title: "GoTApp"
+host: "api.gameofthronesquotes.xyz"
+basePath: "/v1"
+tags:
+- name: "Characters"
+  description: "Game of Thrones's character"
+
+schemes:
+- "http"
+- "https"
+
+# ------------------------------------------------
+
+paths:
+
+  /characters:
+    get:
+      tags:
+        - Characters
+      summary: "Characters of Game of Thrones"
+      operationId: "getCharacters"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/character"
+        400:
+          description: "Bad request"
+        500:
+          description: "Cannot get characters"
+        
+
+# ------------------------------------------------
+          
+definitions:
+  character:
+    type: object
+    properties:
+     name:
+      type: string
+      example: "Sansa Stark"
+     slug:
+      type: string
+      example: "sansa"
+     house:
+          # The value of this property is an object
+          type: object
+          properties:
+            slug:
+              type: string
+              example: "stark"
+            name:
+              type: string
+              example: "House Stark of Winterfell"
+     quotes:
+        type: "array"
+        items: {}
+        example: [ "I hate the king more than any of them.", "No need to seize the last word, Lord Baelish. I'll assume it was something clever.","I am a Stark of Winterfell, this is my home. And you can't frighten me."]

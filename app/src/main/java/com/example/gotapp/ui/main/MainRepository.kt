@@ -2,14 +2,14 @@ package com.example.gotapp.ui.main
 
 import android.util.Log
 import androidx.annotation.WorkerThread
+import com.example.gotapp.model.GoTCharacter
 import com.example.gotapp.model.GoTCharacters
+import com.example.gotapp.model.UIState
 import com.example.gotapp.network.APIService
 import com.example.gotapp.persistence.AppDao
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.onCompletion
-import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import java.io.IOException
 import javax.inject.Inject
 
 class MainRepository @Inject constructor(
@@ -17,29 +17,30 @@ class MainRepository @Inject constructor(
     private val dao: AppDao) {
 
     @WorkerThread
-    fun getCharacters(
-        onStart: () -> Unit,
-        onCompletion: () -> Unit,
-        onError: (String) -> Unit
-    ) = flow {
-        var characters: GoTCharacters = dao.getAll()
-        if (characters.isEmpty()) {
-               try {
-                   // request API network call asynchronously.
-                   characters = service.getCharacters()
-                   // handle the case when the API request gets a success response.
-                   dao.insertAll(characters)
-                   emit(characters)
-               } catch(error: Exception) {
-                   Log.e("something went wrong", error.message.orEmpty())
+    fun getCharacters(): Flow<GoTCharacters> = dao.getCharactersFlow()
 
-                   // handle the case when the API request is fails.
-                   // e.g. internal server error.
-                   onError(error.message.orEmpty())
-                   emit(listOf())
-               }
-        } else {
-            emit(characters)
-        }
-    }.onStart { onStart() }.onCompletion { onCompletion() }.flowOn(Dispatchers.IO)
+    @WorkerThread
+    suspend fun reloadCharacters(state: MutableStateFlow<UIState>) {
+        state.emit(UIState.Loading)
+        kotlin.runCatching {
+            service.getCharacters()
+        }.fold(
+            onSuccess = {
+                dao.insertAll(it)
+                state.emit(UIState.Loaded)},
+            onFailure = {
+                Log.e("something went wrong", it.message.orEmpty())
+                val error = when (it) {
+                    is IOException -> "Nincs internet kapcsolat"
+                    else -> it.message ?: "error"
+                }
+                state.emit(UIState.Failed(error))
+            },
+        )
+    }
+
+    @WorkerThread
+    fun deleteCharacter(it: GoTCharacter) {
+        dao.delete(it)
+    }
 }
