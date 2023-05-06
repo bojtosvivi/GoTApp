@@ -1,0 +1,341 @@
+[
+  {
+    "name": "Jon Snow",
+    "slug": "jon",
+    "house": {
+      "slug": "stark",
+      "name": "House Stark of Winterfell"
+    },
+    "quotes": [
+      "If I fall, don't bring me back.",
+      "There is only one war that matters. The Great War. And it is here.",
+      "Love is the death of duty.",
+      "Everything before the word \"but\" is horseshit.",
+      "The war is not over. And I promise you, friend, the true enemy won't wait out the storm. He brings the storm."
+    ]
+  },
+  {
+    "name": "Sansa Stark",
+    "slug": "sansa",
+    "house": {
+      "slug": "stark",
+      "name": "House Stark of Winterfell"
+    },
+    "quotes": [
+      "I hate the king more than any of them.",
+      "No need to seize the last word, Lord Baelish. I'll assume it was something clever.",
+      "I am a Stark of Winterfell, this is my home. And you can't frighten me."
+    ]
+  },
+  {
+    "name": "Eddard \"Ned\" Stark",
+    "slug": "ned",
+    "house": {
+      "slug": "stark",
+      "name": "House Stark of Winterfell"
+    },
+    "quotes": [
+      "The man who passes the sentence should swing the sword.",
+      "Winter is coming!",
+      "I, Eddard of the house Stark, lord of Winterfell and warden of the North, sentence you to die.",
+      "A madman sees what he sees.",
+      "I grew up with soldiers. I learned how to die a long time ago.",
+      "A ruler who hides behind paid executioners soon forgets what death is.",
+      "When the snows fall and the white winds blow, the lone wolf dies but the pack survives"
+    ]
+  },
+  {
+    "name": "Catelyn Stark",
+    "slug": "catelyn",
+    "house": {
+      "slug": "stark",
+      "name": "House Stark of Winterfell"
+    },
+    "quotes": [
+      "Laughter is poison to fear.",
+      "All this horror that has come to my family, it's all because I couldn't love a motherless child."
+    ]
+  },
+  {
+    "name": "Jaime Lannister",
+    "slug": "jaime",
+    "house": {
+      "slug": "lannister",
+      "name": "House Lannister of Casterly Rock"
+    },
+    "quotes": [
+      "The things I do for love.",
+      "Fighting bravely for a losing cause is admirable. Fighting for a winning cause is far more rewarding.",
+      "Three victories don't make you a conqueror.",
+      "By what right does the wolf judge the lion?",
+      "There are no men like me. Only me."
+    ]
+  },
+  {
+    "name": "Tyrion Lannister",
+    "slug": "tyrion",
+    "house": {
+      "slug": "lannister",
+      "name": "House Lannister of Casterly Rock"
+    },
+    "quotes": [
+      "I have a tender spot in my heart for cripples, bastards and broken things.",
+      "Never forget what you are. The rest of the world will not. Wear it like armour, and it can never be used to hurt you.",
+      "The day will come when you think you are safe and happy, and your joy will turn to ashes in your mouth.",
+      "That's what I do: I drink and I know things.",
+      "I am your son. I have always been your son.",
+      "You love your children. It's your one redeeming quality. That and your cheekbones.",
+      "That bit of theatre will haunt our family for a generation.",
+      "Love is more powerful than reason. We all know that.",
+      "A Lannister always pays his debts.",
+      "I know that our enemies hate each other almost as much as they hate us.",
+      "Well, my brother has his sword, and I have my mind, and a mind needs books like a sword needs a whetstone, if it's to keep its edge.",
+      "It's not easy being drunk all the time. Everyone would do it, if it were easy.",
+      "A ruler who kills those devoted to her is not a ruler who inspires devotion.",
+      "Never forget what you are. The rest of the world will not. Wear it like armor, and it can never be used to hurt you.",
+      "Everyone who makes a joke about a dwarf's height thinks he's the only person ever to make a joke about a dwarf's height.",
+      "No matter who you are, no matter how strong you are, sooner or later, you'll face circumstances beyond your control.",
+      "I'm a constant disappointment to my own father, and I have learned to live with it.",
+      "Death is so terribly final, while life is full of possibilities.",
+      "Why is it that when one man builds a wall, the next man immediately needs to know what's on the other side?",
+      "People often claim to hunger for truth, but seldom like the taste when it's served up.",
+      "When you tear out a man's tongue, you are not proving him a liar, you're only telling the world that you fear what he might say",
+      "Many underestimated you. Most of them are dead now.",
+      "I have a lot of experience in losing.",
+      "I'm guilty of being a dwarf."
+    ]
+  },
+  {
+    "name": "Cersei Lannister",
+    "slug": "cersei",
+    "house": {
+      "slug": "lannister",
+      "name": "House Lannister of Casterly Rock"
+    },
+    "quotes": [
+      "When you play the game of thrones, you win or you die. There is no middle ground.",
+      "If you ever call me sister again, I'll have you strangled in your sleep.",
+      "If you want a whore, buy one. If you want a Queen, earn her.",
+      "Tears aren't a woman's only weapon. The best one's between your legs.",
+      "The only way to keep your people loyal is to make certain they fear you more than they do the enemy.",
+      "I want our baby to live. Don't let me die, Jaime. Please don't let me die.",
+      "I don't care about checking my worst impulses. I don't care about making the world a better place. Hang the world.",
+      "You love your children. It's why you'll never win.",
+      "The more people you love, the weaker you are.",
+      "The only way to keep your people loyal is to make certain they fear you more than they do the enemy.",
+      "I don't choose sides. I'm the queen of the Seven Kingdoms."
+    ]
+  },
+  {
+    "name": "Joffrey Baratheon",
+    "slug": "joffrey",
+    "house": {
+      "slug": "baratheon",
+      "name": "House Baratheon of Dragonstone"
+    },
+    "quotes": [
+      "Everyone is mine to torment."
+    ]
+  },
+  {
+    "name": "Aerys II Targaryen",
+    "slug": "aerys",
+    "house": {
+      "slug": "targaryen",
+      "name": "House Targaryen of King's Landing"
+    },
+    "quotes": [
+      "Burn them all!"
+    ]
+  },
+  {
+    "name": "Aemon Targaryen",
+    "slug": "aemon",
+    "house": {
+      "slug": "targaryen",
+      "name": "House Targaryen of King's Landing"
+    },
+    "quotes": [
+      "We are only human, and the gods have fashioned us for love. That is our great glory, and our great tragedy."
+    ]
+  },
+  {
+    "name": "Daenerys Targaryen",
+    "slug": "daenerys",
+    "house": {
+      "slug": "targaryen",
+      "name": "House Targaryen of King's Landing"
+    },
+    "quotes": [
+      "I am the dragon's daughter, and I swear to you that those who would harm you will die screaming.",
+      "He was no dragon. Fire cannot kill a dragon.",
+      "All men must die, but we are not men."
+    ]
+  },
+  {
+    "name": "Tywin Lannister",
+    "slug": "tywin",
+    "house": {
+      "slug": "lannister",
+      "name": "House Lannister of Casterly Rock"
+    },
+    "quotes": [
+      "A lion does not concern himself with the opinion of sheep.",
+      "Any man who must say 'I am the King' is no true King.",
+      "Every day that he remains a prisoner, the less our name commands respect.",
+      "I need you to become the man you were always meant to be. Not next year, not tomorrow, now."
+    ]
+  },
+  {
+    "name": "Ramsay Bolton",
+    "slug": "ramsay",
+    "house": {
+      "slug": "bolton",
+      "name": "House Bolton of the Dreadfort"
+    },
+    "quotes": [
+      "If you think this has a happy ending, you haven't been paying attention."
+    ]
+  },
+  {
+    "name": "Arya Stark",
+    "slug": "arya",
+    "house": {
+      "slug": "stark",
+      "name": "House Stark of Winterfell"
+    },
+    "quotes": [
+      "When people ask you what happened here, tell them the North remembers. Tell them winter came for House Frey.",
+      "Nothing isn't better or worse than anything. Nothing is just nothing.",
+      "Leave one wolf alive and the sheep are never safe.",
+      "Fear cuts deeper than swords."
+    ]
+  },
+  {
+    "name": "Robert Baratheon",
+    "slug": "robert",
+    "house": {
+      "slug": "baratheon",
+      "name": "House Baratheon of Dragonstone"
+    },
+    "quotes": [
+      "I'm the King, I get what I want. I never loved my brothers. Sad thing for a man to admit, but it's true. You were the brother I chose."
+    ]
+  },
+  {
+    "name": "Theon Greyjoy",
+    "slug": "theon",
+    "house": {
+      "slug": "greyjoy",
+      "name": "House Greyjoy of Pyke"
+    },
+    "quotes": [
+      "My sword is yours, in victory and defeat, from this day until my last day.",
+      "It's better to be cruel than weak."
+    ]
+  },
+  {
+    "name": "Samwell Tarly",
+    "slug": "samwell",
+    "house": {
+      "slug": "tarly",
+      "name": "House Tarly of Horn Hill"
+    },
+    "quotes": [
+      "I was nothing at all. And when you're nothing at all, there's no reason to be afraid."
+    ]
+  },
+  {
+    "name": "Lord Varys",
+    "slug": "varys",
+    "house": null,
+    "quotes": [
+      "The storms come and go, the big fish eat the little fish and I keep on paddling.",
+      "Power resides where men believe it resides. It's a trick, a shadow on the wall. And a very small man can cast a very large shadow."
+    ]
+  },
+  {
+    "name": "Bran Stark",
+    "slug": "bran",
+    "house": {
+      "slug": "stark",
+      "name": "House Stark of Winterfell"
+    },
+    "quotes": [
+      "We don't have time for all this. The Night King has your dragon. He's one of them now. The Wall has fallen. The dead march south.",
+      "Can a man still be brave if he's afraid? That is the only time a man can be brave."
+    ]
+  },
+  {
+    "name": "Brienne of Tharth",
+    "slug": "brienne",
+    "house": {
+      "slug": "tarth",
+      "name": "House Tarth of Evenfall Hall"
+    },
+    "quotes": [
+      "All I ever wanted was to fight for a lord I believed in. But the good lords are dead and the rest are monsters."
+    ]
+  },
+  {
+    "name": "Petyr Baelish",
+    "slug": "baelish",
+    "house": {
+      "slug": "baelish",
+      "name": "House Baelish of Harrenhal"
+    },
+    "quotes": [
+      "A man with no motive is a man no one suspects. Always keep your foes confused.",
+      "Chaos isn't a pit. Chaos is a ladder.",
+      "It doesn't matter what we want. Once we get it, then we want something else.",
+      "The fall breaks them. And some are given a chance to climb; they cling to the real or the gods or love.",
+      "I have always found revenge to be the purest of motivations.",
+      "It doesn’t matter what we want. Once we get it, then we want something else."
+    ]
+  },
+  {
+    "name": "Tormund",
+    "slug": "tormund",
+    "house": null,
+    "quotes": [
+      "Gingers are beautiful. We've been kissed by fire."
+    ]
+  },
+  {
+    "name": "Melisandre",
+    "slug": "melisandre",
+    "house": null,
+    "quotes": [
+      "The night is dark and full of terrors."
+    ]
+  },
+  {
+    "name": "Olenna Tyrell",
+    "slug": "olenna",
+    "house": {
+      "slug": "tyrell",
+      "name": "House Tyrell of Highgarden"
+    },
+    "quotes": [
+      "The world is overflowing with horrible things, but they’re all a tray of cakes next to death.",
+      "I was told you were drunk, impertinent and thoroughly debauched. You can imagine my disappointment at finding nothing but a browbeaten bookkeeper."
+    ]
+  },
+  {
+    "name": "Mance Rayder",
+    "slug": "mance",
+    "house": null,
+    "quotes": [
+      "The freedom to make my own mistakes was all I ever wanted."
+    ]
+  },
+  {
+    "name": "Ygritte",
+    "slug": "ygritte",
+    "house": null,
+    "quotes": [
+      "You know nothing, Jon Snow.",
+      "Every man must die, Jon Snow. but first, he must live"
+    ]
+  }
+]
