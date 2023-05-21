@@ -12,6 +12,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -19,24 +20,25 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     val mainRepository: MainRepository
 ) : ViewModel() {
+
+    val characterList: Flow<GoTCharacters> = mainRepository.getCharacters()
+
+    val uiState: MutableStateFlow<UIState> = MutableStateFlow(UIState.Loaded)
+
     fun reloadCharacters() {
         viewModelScope.launch(Dispatchers.IO) {
             mainRepository.reloadCharacters(uiState)
         }
     }
 
-    fun deleteCharacter(it: GoTCharacter) {
-        viewModelScope.launch(Dispatchers.IO) {
-            mainRepository.deleteCharacter(it)
-        }
-    }
-
-    val characterList: Flow<GoTCharacters> = mainRepository.getCharacters()
-
-    val uiState: MutableStateFlow<UIState> = MutableStateFlow(UIState.Loading)
-
     init {
-        reloadCharacters()
+        viewModelScope.launch(Dispatchers.IO) {
+            characterList.collectLatest {
+                if (it.isEmpty()) {
+                    mainRepository.reloadCharacters(uiState)
+                }
+            }
+        }
     }
 
 }

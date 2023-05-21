@@ -31,8 +31,8 @@ class MainRepository @Inject constructor(
             onFailure = {
                 Log.e("something went wrong", it.message.orEmpty())
                 val error = when (it) {
-                    is IOException -> "Nincs internet kapcsolat"
-                    else -> it.message ?: "error"
+                    is IOException -> "Please check your internet connection"
+                    else -> it.message ?: "unknown error"
                 }
                 state.emit(UIState.Failed(error))
             },
