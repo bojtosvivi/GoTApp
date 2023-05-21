@@ -7,6 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,7 +18,7 @@ class DetailsViewModel @Inject constructor(val repository: DetailsRepository): V
 
     fun getCharactersOfHouse(slug: String?) {
         viewModelScope.launch(Dispatchers.IO){
-            repository.getCharacters().collect{
+            repository.getCharacters().collectLatest {
                 _characters.emit(it.filter { character -> character.house?.slug == slug })
             }
         }

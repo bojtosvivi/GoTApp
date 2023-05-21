@@ -38,7 +38,7 @@ import org.robolectric.annotation.Config
 
 
   @Test
-  fun insertAllAndGetByNameTest() = runTest {
+  fun insertAllAndGetTest() = runTest {
     val mockDataList = listOf(
       GoTCharacter(
       name = "Vivi",
@@ -61,4 +61,79 @@ import org.robolectric.annotation.Config
     val mockData = appDao.findByName("Bonbi")
     assert(loadFromDB.firstOrNull { it == mockData } != null)
   }
+
+
+    @Test
+    fun getByNameTest() = runTest {
+        val mockDataList = listOf(
+            GoTCharacter(
+                name = "Vivi",
+                slug = "jon",
+                house = House(slug = "test", name = "Stark"),
+                quotes = listOf()
+            ),
+            GoTCharacter(
+                name = "Bonbi",
+                slug = "sansa",
+                house = House(slug = "test2", name = "Stark"),
+                quotes = listOf()
+            )
+        )
+
+        appDao.insertAll(mockDataList)
+
+        val mockData = appDao.findByName("Vivi")
+        val mockData2 = appDao.findByName("Bonbi")
+        val mockData3 = appDao.findByName("Diego")
+
+        assert(mockData?.slug == "jon")
+        assert(mockData2?.slug == "sansa")
+        assert(mockData3 == null)
+    }
+
+    @Test
+    fun insertAndUpdateTest() = runTest {
+        appDao.insert( GoTCharacter(
+            name = "Vivi",
+            slug = "jon",
+            house = House(slug = "test", name = "Stark"),
+            quotes = listOf()
+        ))
+
+        val mockData = appDao.findByName("Vivi")
+        assert(mockData?.slug == "jon")
+
+        appDao.update( GoTCharacter(
+            name = "Vivi",
+            slug = "stark",
+            house = House(slug = "test", name = "Stark"),
+            quotes = listOf()
+        ),)
+
+        val updatedData = appDao.findByName("Vivi")
+        assert(updatedData?.slug == "stark")
+    }
+
+    @Test
+    fun insertAndDeleteTest() = runTest {
+        appDao.insert( GoTCharacter(
+            name = "Vivi",
+            slug = "jon",
+            house = House(slug = "test", name = "Stark"),
+            quotes = listOf()
+        ),)
+
+        val mockData = appDao.findByName("Vivi")
+        assert(mockData?.slug == "jon")
+
+        appDao.delete(GoTCharacter(
+            name = "Vivi",
+            slug = "jon",
+            house = House(slug = "test", name = "Stark"),
+            quotes = listOf()
+        ),)
+
+        val deletedData = appDao.findByName("Vivi")
+        assert(deletedData == null)
+    }
 }

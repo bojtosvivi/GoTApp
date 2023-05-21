@@ -8,10 +8,9 @@ import com.example.gotapp.persistence.AppDao
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class DetailsRepository  @Inject constructor(
+class DetailsRepository @Inject constructor(
     private val dao: AppDao
-)
-{
-@WorkerThread
-fun getCharacters(): Flow<GoTCharacters> = dao.getCharactersFlow()
+) {
+    @WorkerThread
+    fun getCharacters(): Flow<GoTCharacters> = dao.getCharactersFlow()
 }

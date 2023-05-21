@@ -11,9 +11,9 @@ import com.example.gotapp.ui.details.Details
 import com.example.gotapp.ui.main.Main
 
 @Composable
-fun Navigation () {
+fun Navigation (modifier: Modifier) {
     val navController = LocalNavController.current
-    NavHost(navController = navController, startDestination = "main_page", modifier = Modifier.fillMaxSize()) {
+    NavHost(navController = navController, startDestination = "main_page", modifier = modifier) {
         composable("main_page") {
             Main()
         }

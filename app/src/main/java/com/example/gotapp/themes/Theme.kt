@@ -1,42 +1,30 @@
 package com.example.gotapp.themes
 
-import androidx.compose.material3.MaterialTheme.typography
-import androidx.compose.material3.ProvideTextStyle
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.ReadOnlyComposable
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.staticCompositionLocalOf
-import androidx.compose.ui.graphics.Color
-
- fun lightColors() = CustomColors(
-    primary = Color(0xFFA29F9F),
-    text = Color(0xFF86090A),
-    background = Color(0xFF000000),
-    success = Color(0xFF995F00),
-    error = Color(0xFFD10F0F),
-    isLight = true,
-)
-
-val LocalColors = staticCompositionLocalOf { lightColors() }
-
-object CustomTheme {
-    val colors: CustomColors
-        @Composable
-        @ReadOnlyComposable
-        get() = LocalColors.current
-}
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.material.Typography
+import androidx.compose.ui.unit.dp
+import com.example.gotapp.R
 
 @Composable
 fun CustomTheme(
-    colors: CustomColors = CustomTheme.colors,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
-    val rememberedColors = remember { colors.copy() }.apply { updateColorsFrom(colors) }
-    CompositionLocalProvider(
-        LocalColors provides rememberedColors,
-    ) {
-        ProvideTextStyle(typography.displayMedium, content = content)
-    }
+    val colors = if (isSystemInDarkTheme()) gotDarkColors else gotLightColors
+
+    val shapes = MaterialTheme.shapes.copy(
+        small = RoundedCornerShape(8.dp),
+        medium = RoundedCornerShape(16.dp),
+        large = RoundedCornerShape(24.dp)
+    )
+
+    val typography = Typography(
+        defaultFontFamily = FontFamily(Font(R.font.comme))
+    )
+
+    MaterialTheme(colors, shapes = shapes, typography = typography, content = content)
 }
