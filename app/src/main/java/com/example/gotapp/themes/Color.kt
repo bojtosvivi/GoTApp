@@ -22,6 +22,7 @@ val got_textColor: Color
 @ReadOnlyComposable
 get() = if (isSystemInDarkTheme()) got_white else got_black
 
+@SuppressLint("ConflictingOnColor")
 val gotLightColors = lightColors(
     primary = got_gold_light,
     primaryVariant = got_gold_light,
