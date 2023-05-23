@@ -38,6 +38,7 @@ val gotLightColors = lightColors(
     onError = got_yellow
 )
 
+@SuppressLint("ConflictingOnColor")
 val gotDarkColors = darkColors(
     primary = got_gold_dark,
     primaryVariant = got_gold_dark,

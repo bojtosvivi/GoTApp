@@ -12,6 +12,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CarCrash
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -128,7 +130,7 @@ fun Details(slug: String?, title: String?, viewModel: DetailsViewModel = hiltVie
                                         }
                                     }
                                 }
-                                IconButton(
+                                Row { IconButton(
                                     onClick = { showQuotes.value = !showQuotes.value },
                                     modifier = Modifier
                                         .padding(8.dp)
@@ -148,6 +150,28 @@ fun Details(slug: String?, title: String?, viewModel: DetailsViewModel = hiltVie
                                         modifier = Modifier.fillMaxSize(),
                                         contentScale = ContentScale.Fit
                                     )
+                                }
+                                    IconButton(
+                                        onClick = {  throw RuntimeException("Test Crash") },
+                                        modifier = Modifier
+                                            .padding(8.dp)
+                                            .size(60.dp)
+                                            .background(
+                                                color = if (isSystemInDarkTheme())
+                                                    got_black.copy(0.7f)
+                                                else got_white.copy(0.7f),
+                                                shape = CircleShape
+                                            )
+                                            .padding(16.dp)
+                                    ) {
+                                        Image(
+                                            Icons.Default.CarCrash,
+                                            contentDescription = "quotes",
+                                            colorFilter = ColorFilter.tint(if (isSystemInDarkTheme()) got_white else got_black),
+                                            modifier = Modifier.fillMaxSize(),
+                                            contentScale = ContentScale.Fit
+                                        )
+                                    }
                                 }
                             }
                             Text(
