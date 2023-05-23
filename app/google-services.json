@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985999620775",
+    "project_id": "gotapp-50e22",
+    "storage_bucket": "gotapp-50e22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985999620775:android:dd98b2af6c419584287982",
+        "android_client_info": {
+          "package_name": "com.example.gotapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985999620775-dkq3kicbjcdn30o6l44ahc43sr3a1his.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOKuYrEYdE13r9qZXHJsq1MhPAq2DaRsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985999620775-dkq3kicbjcdn30o6l44ahc43sr3a1his.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

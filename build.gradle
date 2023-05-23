@@ -4,6 +4,9 @@ buildscript {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.45'
         classpath 'org.jetbrains.kotlin:kotlin-serialization:1.8.10'
         classpath "org.jacoco:org.jacoco.core:0.8.6"
+        classpath 'com.google.gms:google-services:4.3.14'
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
     }
 }
 plugins {
